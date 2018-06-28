@@ -3,6 +3,7 @@
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 use Twig_Environment;
 use Twig_NodeVisitorInterface;
+use Vineyard\CompressorPlugin\ComrpessHtmlTokenParser;
 
 class CompressorPlugin extends Plugin
 {
@@ -16,9 +17,9 @@ class CompressorPlugin extends Plugin
         return [
             new \Twig_SimpleFunction(
                 'html_compress',
-                function ($options = []) {
-                    ob_start(function($buffer){
-                        if(strpos($buffer, "<html")!==false)
+                function () {
+                    ob_start(function($buffer) {
+                        if(strpos($buffer, "<html") !== false)
                         {
                             return preg_replace(['/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s'],['>','<','\\1'],$buffer);
                         } 
@@ -31,7 +32,7 @@ class CompressorPlugin extends Plugin
             ),
             new \Twig_SimpleFunction(
                 'end_html_compress',
-                function ($options = []) {
+                function () {
                     ob_end_flush();
                     return null;
                 }
@@ -77,7 +78,9 @@ class CompressorPlugin extends Plugin
      */
     public function getTokenParsers()
     {
-        return [];
+        return [
+            new CompressHtmlTokenParser()
+        ];
     }
 
     /**
