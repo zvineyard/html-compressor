@@ -16,22 +16,15 @@ class CompressorPlugin extends Plugin
     {
         return [
             new \Twig_SimpleFunction(
-                'html_compress',
+                'htmlcompress',
                 function () {
                     ob_start(function($buffer) {
-                        if(strpos($buffer, "<html") !== false)
-                        {
-                            return preg_replace(['/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s'],['>','<','\\1'],$buffer);
-                        } 
-                        else 
-                        {
-                            return $buffer;
-                        }
+                        return preg_replace(['/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s'],['>','<','\\1'],$buffer);
                     });
                 }
             ),
             new \Twig_SimpleFunction(
-                'end_html_compress',
+                'endhtmlcompress',
                 function () {
                     ob_end_flush();
                     return null;
