@@ -1,11 +1,11 @@
-<?php namespace Vineyard\CompressorPlugin;
+<?php namespace Vineyard\HtmlCompressionPlugin;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 use Twig_Environment;
 use Twig_NodeVisitorInterface;
-use Vineyard\CompressorPlugin\ComrpessHtmlTokenParser;
+use Vineyard\HtmlCompressionPlugin\ComrpessHtmlTokenParser;
 
-class CompressorPlugin extends Plugin
+class HtmlCompressionPlugin extends Plugin
 {
     /**
      * Returns a list of functions to add to the existing list.

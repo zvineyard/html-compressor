@@ -1,8 +1,8 @@
-<?php namespace Vineyard\CompressorPlugin;
+<?php namespace Vineyard\HtmlCompressionPlugin;
 
 use Twig_Token;
 use Twig_TokenParser;
-use Vineyard\CompressorPlugin\CompressHtmlNode;
+use Vineyard\HtmlCompressionPlugin\CompressHtmlNode;
 
 class CompressHtmlTokenParser extends Twig_TokenParser
 {

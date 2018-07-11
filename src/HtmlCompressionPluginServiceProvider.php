@@ -1,9 +1,9 @@
-<?php namespace Vineyard\CompressorPlugin;
+<?php namespace Vineyard\HtmlCompressionPlugin;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
 use Illuminate\Routing\Router;
 
-class CompressorPluginServiceProvider extends AddonServiceProvider
+class HtmlCompressionPluginServiceProvider extends AddonServiceProvider
 {
 
     /**

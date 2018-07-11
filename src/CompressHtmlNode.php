@@ -1,4 +1,4 @@
-<?php namespace Vineyard\CompressorPlugin;
+<?php namespace Vineyard\HtmlCompressionPlugin;
 
 use Twig_Node;
 

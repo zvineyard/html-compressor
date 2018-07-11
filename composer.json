@@ -1,9 +1,9 @@
 {
-    "name": "vineyard/compressor-plugin",
+    "name": "vineyard/html_compression-plugin",
     "type": "streams-addon",
     "autoload": {
         "psr-4": {
-            "Vineyard\\CompressorPlugin\\": "src/"
+            "Vineyard\\HtmlCompressionPlugin\\": "src/"
         }
     }
 }
